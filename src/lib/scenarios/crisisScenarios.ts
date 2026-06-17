@@ -1,0 +1,8 @@
+export type CrisisScenario = {
+  id: string; title: string; company: string; severity: "medium"|"high"|"critical"; affectedSystems: string[]; description: string; trigger: string; stakes: string[];
+};
+export const crisisScenarios: CrisisScenario[] = [
+ {id:"ransomware",title:"Ransomware during peak sales",company:"ShopNow",severity:"critical",affectedSystems:["payments","orders","erp","warehouse"],description:"A retail company detects ransomware activity while payment processing and order fulfillment are running at peak load.",trigger:"SOC alert: suspicious encryption activity and failed access attempts across ERP and payments.",stakes:["Revenue loss per hour","Customer trust","Evidence preservation","Regulatory exposure"]},
+ {id:"data-leak",title:"Customer data leak",company:"FinCloud",severity:"high",affectedSystems:["customer database","support platform","analytics export"],description:"A fintech company discovers a public bucket containing customer support exports with potential personal data.",trigger:"External researcher reports an exposed dataset through responsible disclosure.",stakes:["Regulatory notification","Customer communication","Legal liability","Root cause containment"]},
+ {id:"outage",title:"Global production outage",company:"RouteOps",severity:"critical",affectedSystems:["api gateway","mobile app","dispatch console"],description:"A logistics platform goes down globally after a failed deployment and customers cannot create or track shipments.",trigger:"Deployment rollback fails and API error rate remains above 80%.",stakes:["SLA penalties","Operational paralysis","Rollback decision","Executive escalation"]}
+];

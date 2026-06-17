@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server";
+export async function POST(req: Request) { const body = await req.json(); const timeline = body.timeline ?? []; return NextResponse.json({ report: { title:"SentinelOps Crisis Response Report", generatedAt:new Date().toISOString(), finalDecision:timeline.at?.(-1)?.decision ?? "PENDING", timeline, auditTrail: timeline.map((m:any)=>({agent:m.agent, decision:m.decision, at:m.at})) }}); }
