@@ -93,17 +93,16 @@ export default function Home() {
     const text = messageText.trim();
     setMessageText("");
 
-    // Mostrar el mensaje del operador en el timeline
-    const humanMsg = {
-      id: crypto.randomUUID(),
-      at: new Date().toISOString(),
-      agentId: "human" as CrisisAgentId,
-      agent: "Human Operator",
-      role: "Crisis Commander",
-      model: "",
-      content: text,
-      status: "sent" as const,
-    };
+   const humanMsg: CrisisMessage = {
+    id: crypto.randomUUID(),
+    at: new Date().toISOString(),
+    agentId: "human" as CrisisAgentId,
+    agent: "Human Operator",
+    role: "Crisis Commander",
+    model: "",
+    content: text,
+    status: "sent",
+  };
     setTimeline((current) => [...current, humanMsg]);
 
     try {
