@@ -103,7 +103,7 @@ export default function Home() {
     content: text,
     status: "sent",
   };
-    setTimeline((current) => [...current, humanMsg]);
+   setTimeline((current) => [...current, humanMsg as unknown as CrisisMessage]);
 
     try {
       const res = await fetch("/api/crisis/respond", {
