@@ -103,7 +103,8 @@ export default function Home() {
     content: text,
     status: "sent",
   };
-   setTimeline((current) => [...current, humanMsg as unknown as CrisisMessage]);
+  // @ts-ignore
+    setTimeline((current) => [...current, humanMsg]);
 
     try {
       const res = await fetch("/api/crisis/respond", {
@@ -112,7 +113,6 @@ export default function Home() {
         body: JSON.stringify({ chatId: bandChatId, message: text, timeline }),
       });
       const data = await res.json();
-      console.log("respond API:", data); // ← mirá esto en DevTools
       if (data.responses) {
         for (const msg of data.responses) {
           await new Promise((r) => setTimeout(r, 600));
