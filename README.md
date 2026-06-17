@@ -6,7 +6,7 @@ SentinelOps turns Band into a multi-agent crisis command center for regulated in
 
 ## Demo
 
-[Watch the 5-minute demo video](#) <!-- link a tu video -->
+[Watch the demo video](https://www.youtube.com/watch?v=DaeF7IMgA3E) 
 
 ## How it works
 
