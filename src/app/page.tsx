@@ -22,7 +22,7 @@ import {
   Sun,
   Users,
 } from "lucide-react";
-import type { CrisisMessage } from "@/lib/agents/types";
+import type { CrisisMessage, CrisisAgentId } from "@/lib/agents/types";
 import { crisisScenarios } from "@/lib/scenarios/crisisScenarios";
 import { AgentCard } from "./components/AgentCard";
 import { AgentNetwork } from "./components/AgentNetwork";
@@ -97,7 +97,7 @@ export default function Home() {
     const humanMsg = {
       id: crypto.randomUUID(),
       at: new Date().toISOString(),
-      agentId: "human",
+      agentId: "human" as CrisisAgentId,
       agent: "Human Operator",
       role: "Crisis Commander",
       model: "",
